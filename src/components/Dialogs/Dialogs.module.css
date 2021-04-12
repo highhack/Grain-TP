@@ -1,0 +1,35 @@
+.dialogs {
+display: grid;
+grid-template-columns: 3fr 10fr;
+    margin: 10px;
+}
+
+.messages {
+    margin-top: 35px;
+}
+
+.dialogItems, .messages {
+    display: grid;
+}
+
+.dialogItems .active {
+    color: rgb(8, 56, 97);
+}
+
+.dialogItems .messages {
+    color: white;
+
+}
+
+.dialogItems {
+    margin: 20px;
+}
+
+.dialogItems img {
+width: 40px;
+height:  40px;
+    border-radius: 50%;
+
+}
+
+

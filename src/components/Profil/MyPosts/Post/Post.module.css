@@ -1,0 +1,11 @@
+
+
+.itemm {
+    color: blue;
+    font-size: large;
+  }
+
+  .itemm img {
+      width: 50px;
+      border-radius: 50%;
+  }

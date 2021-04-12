@@ -1,0 +1,10 @@
+
+.mypost {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  color: blue;
+  padding: 10px;
+}
+
+.mypost textarea, h3, button {
+  display: grid;
+}
