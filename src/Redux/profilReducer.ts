@@ -97,6 +97,7 @@ export const updateStatus = (status: string) => {
                 dispatch(setUserStatus(status))
                 }
             })
+
     }
 }
 
