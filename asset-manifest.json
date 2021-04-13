@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Grain-TP/static/css/main.ad3b7cc8.chunk.css",
+    "main.js": "/Grain-TP/static/js/main.405b0a28.chunk.js",
+    "main.js.map": "/Grain-TP/static/js/main.405b0a28.chunk.js.map",
+    "runtime-main.js": "/Grain-TP/static/js/runtime-main.80344e49.js",
+    "runtime-main.js.map": "/Grain-TP/static/js/runtime-main.80344e49.js.map",
+    "static/js/2.25322fee.chunk.js": "/Grain-TP/static/js/2.25322fee.chunk.js",
+    "static/js/2.25322fee.chunk.js.map": "/Grain-TP/static/js/2.25322fee.chunk.js.map",
+    "static/js/3.767c8df8.chunk.js": "/Grain-TP/static/js/3.767c8df8.chunk.js",
+    "static/js/3.767c8df8.chunk.js.map": "/Grain-TP/static/js/3.767c8df8.chunk.js.map",
+    "index.html": "/Grain-TP/index.html",
+    "static/css/main.ad3b7cc8.chunk.css.map": "/Grain-TP/static/css/main.ad3b7cc8.chunk.css.map",
+    "static/js/2.25322fee.chunk.js.LICENSE.txt": "/Grain-TP/static/js/2.25322fee.chunk.js.LICENSE.txt",
+    "static/media/loader.3fb682f9.gif": "/Grain-TP/static/media/loader.3fb682f9.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80344e49.js",
+    "static/js/2.25322fee.chunk.js",
+    "static/css/main.ad3b7cc8.chunk.css",
+    "static/js/main.405b0a28.chunk.js"
+  ]
+}
