@@ -1,9 +1,5 @@
-import React, {ComponentType} from 'react';
-import {
-    addMassageActionCreator,
-    InitialStateDialogType,
-    updateNewMassageBodyActionCreator
-} from '../../Redux/dialogReducer';
+import React from 'react';
+import {addMassageActionCreator, InitialStateDialogType,} from '../../Redux/dialogReducer';
 import Dialogs from "./Dialogs";
 import {compose, Dispatch} from "redux";
 import {AllAppStateType} from "../../Redux/redux-store";
@@ -17,12 +13,9 @@ type MapStatePropsType = {
     dialogPage: InitialStateDialogType
 
 }
-// type mapStateToPropsForRedirect = {
-//     isAuth: boolean
-// }
 type MapDispathPropsType = {
-    addMassage: () => void
-    updateNewMassageBody: (body: string) => void
+    addMassage: (newMassageBody: string)  => void
+    // updateNewMassageBody: (body: string) => void
 }
 
 let mapStateToProps = (state: AllAppStateType): MapStatePropsType => {
@@ -42,12 +35,12 @@ let mapStateToProps = (state: AllAppStateType): MapStatePropsType => {
 
 const mapDispatchToProps = (dispatch: Dispatch): MapDispathPropsType => {
     return {
-        addMassage: () => {
-            dispatch(addMassageActionCreator())
+        addMassage: (newMassageBody: string) => {
+            dispatch(addMassageActionCreator(newMassageBody))
         },
-        updateNewMassageBody: (body: string) => {
-            dispatch(updateNewMassageBodyActionCreator(body))
-        }
+        // updateNewMassageBody: (body: string) => {
+        //     dispatch(updateNewMassageBodyActionCreator(body))
+        // }
     }
 }
 

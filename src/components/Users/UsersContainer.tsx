@@ -8,7 +8,14 @@ import {
     toggleFollowingInProgress, getUserThunkCreator,
 } from "../../Redux/usersReducer";
 import {compose} from "redux";
-import withAuthComponent from "../../hoc/withAuthComponent";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsers
+} from "../../Redux/userSelectors";
 
 export type UsersPropsType = MapStatePropsType & MapDispathPropsType
 type MapStatePropsType = {
@@ -57,25 +64,14 @@ class UsersContainer extends React.Component<UsersPropsType> {
 
 let mapStateToProps = (state: AllAppStateType): MapStatePropsType => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state)
     }
 }
-
-// const UsersContainer = connect(mapStateToProps,
-//     {
-//         follow,
-//         unfollow,
-//         setCurrentPage,
-//         toggleFollowingInProgress,
-//         getUsers: getUserThunkCreator
-//     })(UsersAPIComponent)
-//
-// export default UsersContainer;
 
 export  default  compose<React.ComponentType>(
     connect(mapStateToProps,
@@ -85,6 +81,5 @@ export  default  compose<React.ComponentType>(
             setCurrentPage,
             toggleFollowingInProgress,
             getUsers: getUserThunkCreator
-        }),
-    withAuthComponent
+        })
 )(UsersContainer);

@@ -1,13 +1,13 @@
 import {DialogType, MessegeType} from "./redux-store";
 
 
-const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
+// const UPDATE_NEW_MASSAGE_BODY = 'UPDATE-NEW-MASSAGE-BODY'
 const ADD_MASSAGE = 'ADD-MASSAGE'
 
 export type InitialStateDialogType = {
     dialogs: Array<DialogType>
     messages: Array<MessegeType>
-    newMassageBody: string
+      // newMassageBody: string
 }
 
 let initialState: InitialStateDialogType = {
@@ -57,33 +57,34 @@ let initialState: InitialStateDialogType = {
         {message: 'Good bay', id: 6},
         {message: 'good night', id: 7}
     ],
-    newMassageBody: 'write here'
+     // newMassageBody: 'write here'
 }
 
 const dialogReducer = (state: InitialStateDialogType = initialState, action: ActionsType): InitialStateDialogType => {
     switch (action.type) {
-        case UPDATE_NEW_MASSAGE_BODY:
-            return {
-                ...state,
-                newMassageBody: action.body
-            }
+        // case UPDATE_NEW_MASSAGE_BODY:
+        //     return {
+        //         ...state,
+        //         newMassageBody: action.body
+        //     }
         case ADD_MASSAGE:
             return {
                 ...state,
-                newMassageBody: '',
-                messages: [...state.messages, {message: state.newMassageBody, id: 8}]
+                // newMassageBody: '',
+                messages: [...state.messages, {message: action.newMassageBody, id: 8}],
+                // messages: [...state.messages, {message: state.newMassageBody, id: 8}],
             }
         default:
             return state
     }
 }
 
-export const addMassageActionCreator = () => ({type: ADD_MASSAGE} as const)
-export const updateNewMassageBodyActionCreator = (text: string) =>
-    ({type: UPDATE_NEW_MASSAGE_BODY, body: text} as const)
+export const addMassageActionCreator = (newMassageBody: string) => ({type: ADD_MASSAGE, newMassageBody} as const)
+// export const updateNewMassageBodyActionCreator = (text: string) =>
+//     ({type: UPDATE_NEW_MASSAGE_BODY, body: text} as const)
 type ActionsType =
     | ReturnType<typeof addMassageActionCreator>
-    | ReturnType<typeof updateNewMassageBodyActionCreator>
+    // | ReturnType<typeof updateNewMassageBodyActionCreator>
 
 
 export default dialogReducer

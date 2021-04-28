@@ -1,6 +1,5 @@
-import React, {RefObject} from 'react';
-import s from './ProfilInfo.module.css';
-import {setUserStatus, updateStatus} from "../../../Redux/profilReducer";
+import React from 'react';
+
 
 type PropsType = {
     status: string

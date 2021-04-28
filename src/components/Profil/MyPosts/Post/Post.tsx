@@ -11,10 +11,13 @@ const Post = (props: PropsType) => {
     return (
 
         <div className={s.itemm}>
-            <img  src='https://topmsg.ru/wp-content/uploads/voin-v-chernom-kostyume.jpg' />
-             { props.message }
-            <div>
-                <span> like </span> {props.likecount}
+           <div className={s.textarea}>
+               <img  src='https://topmsg.ru/wp-content/uploads/voin-v-chernom-kostyume.jpg' />
+               <div className={s.message}>{ props.message }</div>
+           </div>
+            <div className={s.likes}>
+                <div> Likes </div>
+                {props.likecount}
             </div>
         </div>
 

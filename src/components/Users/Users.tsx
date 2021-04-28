@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import s from './Users.module.css';
 import {UsersType} from "../../Redux/usersReducer";
 import {NavLink} from 'react-router-dom'
-import {usersApi} from "../../api/api";
 
 type PropsType = {
     setCurrentPage: (currentPage: number) => void
@@ -39,7 +38,6 @@ const Users = (props: PropsType) => {
         props.onChangeNumber(currentPages[0])
     }
 
-
     return <div>
         <div>
             <button onClick={ChangePagesToLeft}>left</button>
@@ -61,36 +59,8 @@ const Users = (props: PropsType) => {
                 <div>
                     {u.followed
                         ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => props.unfollow(u.id)
-                            // props.toggleFollowingInProgress(true, u.id)
-                            // usersApi.deleteFollow(u.id)    //axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
-                            //     //     {
-                            //     //         withCredentials: true,
-                            //     //         headers: {
-                            //     //             'API-KEY': 'fe02794e-87fe-4fe8-ada5-f6fa7d443c83'
-                            //     //         }
-                            //     //     })
-                            //     .then(data => {
-                            //         if (data.resultCode === 0) {
-                            //             props.unfollow(u.id)
-                            //         }
-                            //         props.toggleFollowingInProgress(false, u.id)
-                            //     })
                         }>Unfollow</button>
                         : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => props.follow(u.id)
-                            // props.toggleFollowingInProgress(true, u.id)
-                            // usersApi.postFollow(u.id)    // axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                            //     //     {
-                            //     //         withCredentials: true,
-                            //     //         headers: {
-                            //     //             'API-KEY': 'fe02794e-87fe-4fe8-ada5-f6fa7d443c83'
-                            //     //         }
-                            //     //     })
-                            //     .then(data => {
-                            //         if (data.resultCode === 0) {
-                            //             props.follow(u.id)
-                            //         }
-                            //         props.toggleFollowingInProgress(false, u.id)
-                            //     })
                         }>Follow</button>
                     }
                 </div>

@@ -6,6 +6,7 @@ import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
 import thunkMiddleWare from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form'
+import appReducer from "./appReduser";
 
 export type DialogType = {
     name: string
@@ -24,7 +25,8 @@ export const rootReducer = combineReducers({
     sidebar: sidebarReducer,
     usersPage: usersReducer,
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    app: appReducer
 })
 let store: Store = createStore(rootReducer, applyMiddleware(thunkMiddleWare))
 export type AllAppStateType = ReturnType<typeof rootReducer>

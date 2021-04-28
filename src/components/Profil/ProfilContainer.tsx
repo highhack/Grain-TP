@@ -22,7 +22,7 @@ type MapDispathPropsType = {
 }
 export type UsersPropsType = MapStatePropsType & MapDispathPropsType
 type PathParamsType = {
-    userId: string,
+    userId: string
 }
 type PropsType = RouteComponentProps<PathParamsType> & UsersPropsType
 
@@ -32,10 +32,14 @@ class ProfilContainer extends React.Component<PropsType> {
         let userId: string | number = this.props.match.params.userId
         if (!userId) {
             userId = '11914'
+        if (!userId) {
+            this.props.history.push('/login')
         }
+    }
         this.props.getUserProfil(userId)
         this.props.getUserStatus(userId)
     }
+
 
     render() {
         return (

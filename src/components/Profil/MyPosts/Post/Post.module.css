@@ -1,4 +1,20 @@
 
+.textarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 10px;
+    width: 500px;
+    background: aqua;
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    margin: 2px 10px;
+    font-size: 15px;
+}
 
 .itemm {
     color: blue;
