@@ -6,7 +6,7 @@ type PropsType = {
     updateStatus: (status: string) => void
 }
 
-class ProfileStatus extends React.Component<PropsType> {
+export default class ProfileStatus_Unusing extends React.Component<PropsType> {
     state = {
         editMode: false,
         status: this.props.status
@@ -58,4 +58,3 @@ class ProfileStatus extends React.Component<PropsType> {
 }
 
 
-export default ProfileStatus;
